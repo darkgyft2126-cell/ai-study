@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Builder Study</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">AI Builder Study</div>
+  <div id="account-area" class="account-area"></div>
+</header>
+
+<section id="auth-panel" class="auth-panel" hidden>
+  <h2 id="auth-title">Sign in</h2>
+  <p class="muted">Sign in to save your progress on the server and pick up on any device.</p>
+  <form id="auth-form">
+    <label>Email
+      <input type="email" id="auth-email" required autocomplete="email">
+    </label>
+    <label>Password
+      <input type="password" id="auth-password" required minlength="8" autocomplete="current-password">
+    </label>
+    <button type="submit" id="auth-submit">Sign in</button>
+    <p id="auth-error" class="error" hidden></p>
+  </form>
+  <p class="muted">
+    <a href="#" id="auth-toggle">No account yet? Create one</a>
+  </p>
+</section>
+
+<div class="layout">
+  <nav id="course-nav" class="course-nav" aria-label="Course"></nav>
+  <main id="lesson-main" class="lesson-main">
+    <div id="progress-summary" class="progress-summary"></div>
+    <article id="lesson-view"></article>
+  </main>
+</div>
+
+<script src="config.js"></script>
+<script src="content.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+:root {
+  --ink: #1a1d21;
+  --muted: #5c6670;
+  --line: #d8dde2;
+  --accent: #0b5fa5;
+  --accent-soft: #e8f1f8;
+  --done: #1e7d32;
+  --bg: #ffffff;
+  --panel: #f6f8f9;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.55;
+}
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1.2rem;
+  border-bottom: 1px solid var(--line);
+}
+.brand { font-size: 1.25rem; font-weight: 700; }
+.account-area { font-size: 0.9rem; color: var(--muted); }
+.account-area button { margin-left: 0.6rem; }
+button {
+  font: inherit;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+button.secondary {
+  background: #fff;
+  color: var(--accent);
+}
+button:disabled { opacity: 0.55; cursor: default; }
+.auth-panel {
+  max-width: 26rem;
+  margin: 2rem auto;
+  padding: 1.2rem 1.4rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+.auth-panel label { display: block; margin: 0.7rem 0; font-size: 0.92rem; }
+.auth-panel input {
+  display: block;
+  width: 100%;
+  margin-top: 0.25rem;
+  padding: 0.5rem;
+  font: inherit;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+.error { color: #b3261e; }
+.muted { color: var(--muted); }
+.layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  max-width: 72rem;
+  margin: 0 auto;
+}
+.course-nav {
+  flex: 0 0 19rem;
+  border-right: 1px solid var(--line);
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  max-height: 100vh;
+  overflow-y: auto;
+}
+.course-nav h3 {
+  margin: 1.1rem 0 0.4rem;
+  font-size: 0.95rem;
+}
+.course-nav h3:first-child { margin-top: 0; }
+.course-nav .module-count { color: var(--muted); font-weight: 400; font-size: 0.82rem; }
+.course-nav ul { list-style: none; margin: 0; padding: 0; }
+.course-nav li { margin: 0.15rem 0; }
+.course-nav a {
+  display: block;
+  padding: 0.32rem 0.5rem;
+  border-radius: 6px;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.92rem;
+}
+.course-nav a:hover { background: var(--panel); }
+.course-nav a.active { background: var(--accent-soft); font-weight: 600; }
+.course-nav a .tick { color: var(--done); font-weight: 700; }
+.lesson-main {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 1.2rem 1.6rem 3rem;
+}
+.progress-summary { margin-bottom: 1rem; }
+.progress-bar {
+  height: 0.55rem;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 0.35rem;
+}
+.progress-bar > div {
+  height: 100%;
+  background: var(--done);
+  width: 0;
+}
+.lesson-main h1 { font-size: 1.5rem; margin: 0.2rem 0 1rem; }
+.lesson-main h3 { margin: 1.4rem 0 0.5rem; }
+.lesson-main h4 { margin: 1.2rem 0 0.4rem; }
+.lesson-main pre {
+  background: #10151a;
+  color: #e8eef4;
+  padding: 0.9rem 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+.lesson-main code {
+  font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+  font-size: 0.92em;
+}
+.lesson-main p code, .lesson-main li code {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 0.05rem 0.3rem;
+}
+.lesson-main table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0;
+  font-size: 0.92rem;
+}
+.lesson-main th, .lesson-main td {
+  border: 1px solid var(--line);
+  padding: 0.45rem 0.6rem;
+  text-align: left;
+  vertical-align: top;
+}
+.lesson-main th { background: var(--panel); }
+.lesson-main blockquote {
+  margin: 1rem 0;
+  padding: 0.4rem 1rem;
+  border-left: 3px solid var(--accent);
+  color: var(--muted);
+}
+.complete-row {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 2rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  font-size: 0.98rem;
+}
+.complete-row input { width: 1.15rem; height: 1.15rem; }
+.lesson-nav-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.2rem;
+}
+.lesson-nav-row a { color: var(--accent); text-decoration: none; font-size: 0.95rem; }
+@media (max-width: 760px) {
+  .layout { flex-direction: column; }
+  .course-nav {
+    flex: none;
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+    position: static;
+    max-height: none;
+  }
+}
